@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 
-const Login = props => {
+const Login = () => {
+
+    const history = useHistory();
 
     const [ credentials, setCredentials ] = useState({
         username: '',
@@ -20,7 +23,7 @@ const Login = props => {
         .then( response => {
             console.log("Post response ", response);
             localStorage.setItem('token', JSON.stringify(response.data.payload));
-            props.history.push('/protected');
+            history.push('/protected');
         })
         .catch(error => {
             console.log("Post error ", error);

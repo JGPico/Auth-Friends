@@ -21,3 +21,8 @@ a {
   padding: 6px;
   color: #204963;
 }
+
+.friend-form {
+  display: flex;
+  flex-direction: column;
+}

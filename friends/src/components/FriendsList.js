@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
+import AddFriend from "./AddFriend";
 
 const FriendsList = () => {
 
@@ -23,6 +24,7 @@ const FriendsList = () => {
     return(
         <div>
             <h1>List of Friends</h1>
+            <AddFriend/>
             {friends ? friends.map( element => (
                 <div key={element.id}>
                     <h2>{element.name}</h2>
